@@ -1,16 +1,16 @@
-package basic.human3;
+package basic.human5;
 
 class HumanSample {
     public static void main(String[] args) {
         //Human型の配列を作成
-        Human[] humans = {
-                new Human("Tom"),
+        IfSayHello[] humans = {
+                new English("Tom"),
                 new Japanese("ひろし"),
                 new Chinese("李"),
                 new French("Louise"),
         };
 
-        for (Human human:humans) {
+        for (IfSayHello human:humans) {
             human.sayHello();
         }
     }
