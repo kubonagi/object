@@ -13,7 +13,6 @@ class Student {
     private int eng;//英語の得点
 
     //コンストラクタ
-
     public Student(String name, Gender gender, int jap, int math, int eng) {
         this.name = name;
         this.gender = gender;
