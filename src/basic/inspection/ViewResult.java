@@ -7,9 +7,9 @@ class ViewResult {
     public static void main(String[] args) {
         List<Result> resultList = new ArrayList<>();
         resultList.add(new Result(
-                "202010110910",
+                "202010110715",
                 "久保渚",
-                "2021-07-15T13:45:30",
+                "2021-10-19T13:45:30",
                 36.4,
                 85,
                 122,
