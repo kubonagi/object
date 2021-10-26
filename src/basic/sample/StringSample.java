@@ -19,5 +19,17 @@ public class StringSample {
         //https://docs.oracle.com/javase/jp/11/docs/api/java.base/java/lang/String.html#join(java.lang.CharSequence,java.lang.CharSequence...)
         String joinWord = String.join("",data);
         System.out.println(joinWord);
+
+        //文字列の置き換え
+        //https://docs.oracle.com/javase/jp/11/docs/api/java.base/java/lang/String.html#replace(char,char)
+        String original = "This + is a pen.";
+        String replace = original.replace("is","at");
+        System.out.println(replace);
+
+        //文字列の位置を検索する
+        //https://docs.oracle.com/javase/jp/11/docs/api/java.base/java/lang/String.html#indexOf(java.lang.String,int)
+        sentence = "This is a pen.";
+        int index = sentence.indexOf("is");
+        System.out.println(index);//2
     }
 }
