@@ -19,7 +19,7 @@ class Circle extends Figure{
      * @return double 図形の面積
      */
     public double getArea() {
-        return Math.PI * Math.pow(radius,2);
+        return Math.PI * Math.pow(radius,2);//半径を2乗
     }
 
     @Override
