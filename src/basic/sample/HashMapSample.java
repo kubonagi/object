@@ -16,17 +16,17 @@ class HashMapSample {
         //要素の取得
         System.out.println(map.get("apple"));//りんご
         //キーの集合を取得
-        System.out.println(map.keySet());
+        System.out.println(map.keySet());//orange, apple, pineapple
         //値の集合の取得
-        System.out.println(map.values());
+        System.out.println(map.values());//オレンジ, りんご, パイナップル
         //キーと値を取得
         for (Map.Entry entry:map.entrySet()) {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
         //要素の削除
-        System.out.println(map.remove("orange"));
+        System.out.println(map.remove("orange"));//オレンジ
         //要素の変更
-        map.put("apple","リンゴ");
+        map.put("apple","リンゴ");//apple=リンゴ, pineapple=パイナップル
         //表示
         System.out.println(map);
         //キーによる検索
