@@ -22,7 +22,7 @@ class Employee {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
+        if (this == o) return true;//同じオブジェクトであるから確実に同一
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
         return id == employee.id && Objects.equals(name, employee.name);
