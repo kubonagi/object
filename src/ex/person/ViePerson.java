@@ -21,14 +21,14 @@ class ViewPerson {
 
         //課題１
         System.out.println("課題１");
-        for (Person person:personList) {
+        for (Person person:personList) {  //＝personList.forEach(System.out::println);
             System.out.println(person);
         }
 
         //課題２
         System.out.println("課題２");
         personList.sort(Comparator.comparing(Person::getAge,Comparator.reverseOrder()));
-        for (Person person:personList) {
+        for (Person person:personList) { //＝personList.forEach(System.out::println);
             System.out.println(person);
         }
 
