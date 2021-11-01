@@ -17,7 +17,7 @@ public class StringSample {
 
         //文字列の結合
         //https://docs.oracle.com/javase/jp/11/docs/api/java.base/java/lang/String.html#join(java.lang.CharSequence,java.lang.CharSequence...)
-        String joinWord = String.join("",data);
+        String joinWord = String.join(" ",data);
         System.out.println(joinWord);
 
         //文字列の置き換え
