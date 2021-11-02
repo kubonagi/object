@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class RegexSample {
     public static void main(String[] args) {
         //郵便番号の正規表現
-        String regex = "^[0-9]{3}-[0-9]{4}$";
+        String regex = "^[0-9]{3}-[0-9]{4}$";//https://www.javadrive.jp/regex-basic/sample/index2.html
         String zip1 = "064-0809";
         System.out.println(zip1.matches(regex));//true
         String zip2 = "0000-888";
