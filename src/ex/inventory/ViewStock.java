@@ -13,7 +13,7 @@ public class ViewStock {
         List<PersonalComputer> pcList = new ArrayList<>();
         // PC情報をリストに追加
         pcList.addAll(Arrays.asList(
-                new PersonalComputer("やまだ", 1, 1, 40000, Constants.BIT_64, Constants.WINDOWS_10),
+                new PersonalComputer("やまだ", 1, 1, 40000, Constants2.BIT_64, Constants2.WINDOWS_10),
                 new PersonalComputer("いけだ", 2, 1, 90000, Constants.BIT_64, Constants.WINDOWS_11),
                 new PersonalComputer("いのうえ", 3, 1, 80000, Constants.BIT_64, Constants.WINDOWS_11),
                 new PersonalComputer("たむら", 4, 2, 120000, Constants.BIT_32, Constants.MAC),
@@ -29,9 +29,9 @@ public class ViewStock {
 
         // Key：StorageNo
         // Value：Price
-        for (PersonalComputer p : pcList) {
-            int storageNo = p.getStorageNo();
-            if (!storagePriceMap.containsKey(storageNo)) {
+        for (PersonalComputer p : pcList) { //pcListの中身から繰り返し処理を行い値を取り出す
+            int storageNo = p.getStorageNo();//複数回使うので変数として切り分けしている
+            if (!storagePriceMap.containsKey(storageNo)) {//Mapの中に倉庫番号がkeyとして
                 storagePriceMap.put(storageNo, new ArrayList<>());
             }
             storagePriceMap.get(storageNo).add(p.getPrice());
