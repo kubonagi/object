@@ -4,6 +4,8 @@ public enum Gender {
     MEN("男"),
     WOMEN("女");
 
+    public String getJPName;
+    public String getJpName;
     private String jpName;
 
     Gender(String jpName) {
