@@ -25,17 +25,19 @@ public class ViewStock {
 
         // 保管倉庫ごとの在庫金額を抽出したいのでマップにする
         // storagePriceMapの初期化をする
-        Map<Integer, ArrayList<Integer>> storagePriceMap = new HashMap<>();
+        Map<Integer, List<Integer>> storagePriceMap = new HashMap<>();
 
         // Key：StorageNo
         // Value：Price
         for (PersonalComputer p : pcList) { //pcListの中身から繰り返し処理を行い値を取り出す
             int storageNo = p.getStorageNo();//複数回使うので変数として切り分けしている
             if (!storagePriceMap.containsKey(storageNo)) {//Mapの中に倉庫番号がkeyとして
+
                 storagePriceMap.put(storageNo, new ArrayList<>());
             }
             storagePriceMap.get(storageNo).add(p.getPrice());
         }
+
 
         // storagePriceMapの中身を表示
         System.out.println("// storagePriceMapの中身チェック");
@@ -44,9 +46,10 @@ public class ViewStock {
             System.out.println("PC金額:" + entry.getValue());
         }
 
+        // 応用編
         // 保管倉庫ごとの在庫内容を抽出したいのでマップにする
         // osMapの初期化をする
-        Map<Integer, ArrayList<String>> osMap = new HashMap<>();
+        Map<Integer, List<String>> osMap = new HashMap<>();
 
         // Key：StorageNo
         // Value：OS
@@ -63,6 +66,48 @@ public class ViewStock {
         for (Map.Entry entry : osMap.entrySet()) {
             System.out.println("倉庫番号" + entry.getKey() + ":");
             System.out.println("OS:" + entry.getValue());
+        }
+
+
+        //storagePriceMapからさらに計算を行う
+        //倉庫ごとのpc合計金額を計算して表示
+        System.out.println("//倉庫ごとの合計金額");
+        for (Map.Entry entry: storagePriceMap.entrySet()){
+            double sum = 0; //合計を入れる変数を定義する
+            for (Integer i : (List<Integer>)entry.getValue()) {
+                sum +=i;
+            }
+            System.out.println("倉庫番号" +entry.getKey()+":");
+            System.out.println("合計金額" + sum +"円");
+        }
+
+        //合計台数を表示
+        System.out.println("//倉庫ごとの合計台数");
+        for (Map.Entry entry:storagePriceMap.entrySet()){
+            int cnt = ((List)entry.getValue()).size(); //合計台数
+            System.out.println("倉庫番号" +entry.getKey()+":");
+            System.out.println("合計金額" + cnt +"台");
+        }
+
+        //平均金額の変数を用意する
+        double averagePrice = 0;
+
+        //倉庫別に1台ごとの平均金額を表示
+        System.out.println("//倉庫内の1台ごとの平均金額");
+        for (Map.Entry entry :storagePriceMap.entrySet()){
+            //合計を出す
+            double sum = 0;//平均を入れる変数を定義する
+            for (Integer i:(List<Integer>)entry.getValue()){
+                sum +=i;
+            }
+            //数を数える
+            int cnt = ((List)entry.getValue()).size();
+
+            //平均の変数に値を詰める
+            averagePrice = sum / cnt;
+
+            System.out.println("倉庫番号" + entry.getKey());
+            System.out.println("平均金額" + averagePrice + "円/台");
         }
     }
 }
