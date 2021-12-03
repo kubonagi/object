@@ -9,6 +9,7 @@ public class ArrayIndexOutOfBoundsException {
                 System.out.println(n[i]);
             }
         } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace();
             System.out.println("配列の範囲を超えています");
         } finally {
             System.out.println("終了");
