@@ -10,7 +10,7 @@ public class ArrayIndexOutOfBoundsException {
             }
         } catch (java.lang.ArrayIndexOutOfBoundsException e) {
             e.printStackTrace();
-            System.out.println("配列の範囲を超えています");
+            System.out.println("配列の範囲を\n超えています");
         } finally {
             System.out.println("終了");
         }
